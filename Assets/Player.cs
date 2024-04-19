@@ -26,5 +26,7 @@ public class CubeMovement : MonoBehaviour
         {
             transform.position += new Vector3(-0.5f, 0, 0) * Time.deltaTime;
         }
+
+        
     }
 }
