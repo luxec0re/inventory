@@ -12,23 +12,23 @@ public class OpenInventory : MonoBehaviour
         {
             if (inventoryIsOpen)
             {
-                Open();
+                Closed();
             }
             else
             {
-                Closed();
+                Open();
             }
         }
     }
 
-    public void Open()
+    public void Closed()
     {
         inventoryUI.SetActive(false);
 
         Time.timeScale = 1f;
         inventoryIsOpen = false;
     }
-    public void Closed()
+    public void Open()
     {
         inventoryUI.SetActive(true);
         Time.timeScale = 0f;
