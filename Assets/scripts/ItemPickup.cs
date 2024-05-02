@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    
- 
+
+    public Item Item;
 
    
     void Update()
@@ -15,6 +15,8 @@ public class ItemPickup : MonoBehaviour
 
     public void PickUpItem()
     {
+
+        InventoryManager.Instance.Add(Item);
         Destroy(gameObject);
     }
 

@@ -10,14 +10,18 @@ public class OpenInventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (inventoryIsOpen)
-            {
-                Closed();
-            }
-            else
-            {
-                Open();
-            }
+            inventoryIsOpen = true;
+        }
+
+        if (inventoryIsOpen == true)
+        {
+            Open();
+            InventoryManager.Instance.ListItems();
+        }
+        else if (inventoryIsOpen == true && Input.GetKeyDown(KeyCode.Tab))
+        {
+            Closed();
+            inventoryIsOpen = false;
         }
     }
 
@@ -30,6 +34,7 @@ public class OpenInventory : MonoBehaviour
     }
     public void Open()
     {
+        
         inventoryUI.SetActive(true);
         Time.timeScale = 0f;
         inventoryIsOpen = true;
