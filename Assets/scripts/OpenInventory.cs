@@ -8,20 +8,17 @@ public class OpenInventory : MonoBehaviour
     public GameObject inventoryUI;
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            inventoryIsOpen = true;
-        }
-
-        if (inventoryIsOpen == true)
-        {
+       
             Open();
             InventoryManager.Instance.ListItems();
         }
-        else if (inventoryIsOpen == true && Input.GetKeyDown(KeyCode.Tab))
+        else if (Input.GetKeyDown(KeyCode.Escape))
         {
             Closed();
-            inventoryIsOpen = false;
+            
         }
     }
 

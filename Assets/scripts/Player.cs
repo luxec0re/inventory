@@ -8,7 +8,7 @@ public class CubeMovement : MonoBehaviour
   
     bool inRange = false;
     GameObject Player;
-    public ItemPickup IsItem;
+    ItemPickup IsItem;
 
     Rigidbody2D rb;
     public float speed = 5f;
@@ -49,6 +49,7 @@ public class CubeMovement : MonoBehaviour
     {
         if (collision.CompareTag("Item"))
         {
+            IsItem = collision.gameObject.GetComponent<ItemPickup>();
             inRange = true;
         }
 
